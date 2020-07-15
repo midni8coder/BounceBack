@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <!-- <link href="css/quill.snow.css" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" href="OnsenUI/css/onsenui.css">
+    <link rel="stylesheet" href="OnsenUI/css/onsen-css-components.min.css">
+    <script src="OnsenUI/js/onsenui.min.js"></script> -->
+  <!-- <script src="js/quill.js"></script> -->
+  <!-- <script type="module" src="Ionic/ionic.esm.js"></script>
+<script nomodule src="Ionic/ionic.js"></script>
+<link rel="stylesheet" href="Ionic/ionic.bundle.css"/> -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+  <title>Hello World</title>
+  <style>
+    /* :root {
+        --ion-safe-area-top: 20px;
+        --ion-safe-area-bottom: 22px;
+      } */
+  </style>
+  <script type="module">
+    import { menuController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.menuController = menuController;
+  </script>
+</head>
+
+<body>
+  <!-- <div id="editor">
+        <p>Hello World!</p>
+        <p>Some initial <strong>bold</strong> text</p>
+        <p><br></p>
+      </div> -->
+  <!-- <script>
+        var quill = new Quill('#editor', {
+          theme: 'snow'
+        });
+      </script> -->
+  <ion-app>
+    <ion-menu side="start" content-id="main-content">
+      <ion-header>
+        <ion-toolbar translucent>
+          <ion-title>Bounce Back</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="calculator-outline" slot="start"></ion-icon>
+            <ion-label>Insights</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="paper-plane" slot="start"></ion-icon>
+            <ion-label>Outbox</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="heart" slot="start"></ion-icon>
+            <ion-label>Favorites</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="archive" slot="start"></ion-icon>
+            <ion-label>Archived</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="trash" slot="start"></ion-icon>
+            <ion-label>Trash</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="warning" slot="start"></ion-icon>
+            <ion-label>Spam</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <div class="ion-page" id="main-content">
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button auto-hide="false"></ion-menu-button>
+          </ion-buttons>
+          <ion-buttons slot="primary">
+            <!-- <ion-button> -->
+            <!-- <ion-badge color="secondary">20</ion-badge>
+                <ion-icon name="notifications-outline"></ion-icon> -->
+            <ion-tab-button>
+              <ion-badge color="secondary" slot="top">20</ion-badge>
+              <ion-icon name="notifications-outline"></ion-icon>
+            </ion-tab-button>
+            <!-- </ion-button> -->
+          </ion-buttons>
+
+          <ion-title>Bounce Back</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-item>
+            <!-- <ion-label>Pet</ion-label> -->
+            <ion-select value="All">
+              <ion-select-option value="All">All</ion-select-option>
+              <ion-select-option value="Health">Health</ion-select-option>
+              <ion-select-option value="Relationship">Relationship</ion-select-option>
+              <ion-select-option value="Education">Education</ion-select-option>
+              <ion-select-option value="Business">Business</ion-select-option>
+              <ion-select-option value="Job">Job</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-searchbar></ion-searchbar>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-tabs>
+
+          <ion-tab tab="music">
+            <ion-header translucent>
+              <ion-toolbar>
+                <ion-title>Music</ion-title>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content fullscreen class="ion-padding">
+              <h1>Music</h1>
+            </ion-content>
+          </ion-tab>
+
+          <ion-tab tab="movies">
+            <ion-header translucent>
+              <ion-toolbar>
+                <ion-title>Movies</ion-title>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content fullscreen class="ion-padding">
+              <h1>Movies</h1>
+            </ion-content>
+          </ion-tab>
+
+          <ion-tab tab="games">
+            <ion-header translucent>
+              <ion-toolbar>
+                <ion-title>Games</ion-title>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content fullscreen class="ion-padding">
+              <h1>Games</h1>
+            </ion-content>
+          </ion-tab>
+
+          <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="music">
+              <ion-label>Music</ion-label>
+              <ion-icon name="musical-note"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="movies">
+              <ion-label>Movies</ion-label>
+              <ion-icon name="videocam"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="games">
+              <ion-label>Games</ion-label>
+              <ion-icon name="game-controller"></ion-icon>
+            </ion-tab-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-content>
+    </div>
+  </ion-app>
+
+  <!-- <ons-page>
+          <div id="divSearch">
+            
+        <div style="text-align: center; margin-top: 10px;display: inline-block">
+            <ons-select id="bb-searchbox" onchange="editSelects(event)">
+                <option value="basic">Basic</option>
+                <option value="material">Material</option>
+                <option value="underbar">Underbar</option>
+              </ons-select>
+          
+          <ons-search-input modifier="material modifier2"
+            placeholder="Search"
+            onchange="ons.notification.alert('Searched for: ' + this.value)"
+          ></ons-search-input>
+          <ons-button>Search</ons-button>
+            </div>
+    </div>
+      </ons-page>  -->
+  <!-- <ons-button onclick="alert('Hello World!')">Click Me</ons-button>-->
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+    app.initialize();
+  </script>
+</body>
+
+</html>

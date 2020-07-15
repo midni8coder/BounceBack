@@ -2,10 +2,12 @@
 <widget id="org.bounceback.sample" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>BounceBack</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A platform to show up success and failure stories of your life. 
+        When you don't have friends to share your failure/depression, this is a platform where you can share and get motivated/inspired by people like you. 
+        You can also share Fictional stories that provoke a thought to be better in life
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="devidlingampally@gmail.com" href="https://midni8coder.github.io/">
+        Devid Lingampally(devidlingampally@gmail.com) and Sagar Rodda(sksagar.r@gmail.com)
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -23,7 +25,8 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <platform name="android">
-        <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+        <icon src="www/res/icon/bb/B.png" />
+        <!-- <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
@@ -40,10 +43,11 @@
         <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
-        <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+        <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" /> -->
     </platform>
     <platform name="ios">
-        <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
+        <icon src="www/res/icon/bb/B.png" />
+        <!-- <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="www/res/icon/ios/icon-40.png" width="40" />
         <icon height="80" platform="ios" src="www/res/icon/ios/icon-40@2x.png" width="80" />
@@ -68,15 +72,17 @@
         <splash height="2048" platform="ios" src="www/res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" />
         <splash height="1024" platform="ios" src="www/res/screen/ios/Default-Portrait~ipad.png" width="768" />
         <splash height="960" platform="ios" src="www/res/screen/ios/Default@2x~iphone.png" width="640" />
-        <splash height="480" platform="ios" src="www/res/screen/ios/Default~iphone.png" width="320" />
+        <splash height="480" platform="ios" src="www/res/screen/ios/Default~iphone.png" width="320" /> -->
     </platform>
     <platform name="wp8">
-        <icon height="99" platform="wp8" src="www/res/icon/wp8/ApplicationIcon.png" width="99" />
+        <icon src="www/res/icon/bb/B.png" />
+        <!-- <icon height="99" platform="wp8" src="www/res/icon/wp8/ApplicationIcon.png" width="99" />
         <icon height="159" platform="wp8" src="www/res/icon/wp8/Background.png" width="159" />
-        <splash height="1280" platform="wp8" src="www/res/screen/wp8/screen-portrait.jpg" width="768" />
+        <splash height="1280" platform="wp8" src="www/res/screen/wp8/screen-portrait.jpg" width="768" /> -->
     </platform>
     <platform name="windows">
-        <icon height="150" platform="windows" src="www/res/icon/windows/Square150x150Logo.scale-100.png" width="150" />
+        <icon src="www/res/icon/bb/B.png" />
+        <!-- <icon height="150" platform="windows" src="www/res/icon/windows/Square150x150Logo.scale-100.png" width="150" />
         <icon height="30" platform="windows" src="www/res/icon/windows/Square30x30Logo.scale-100.png" width="30" />
         <icon height="50" platform="windows" src="www/res/icon/windows/StoreLogo.scale-100.png" width="50" />
         <splash height="300" platform="windows" src="www/res/screen/windows/SplashScreen.scale-100.png" width="620" />
@@ -90,7 +96,7 @@
         <icon height="310" platform="windows" src="www/res/icon/windows/Square310x310Logo.scale-100.png" width="310" />
         <icon height="150" platform="windows" src="www/res/icon/windows/Wide310x150Logo.scale-100.png" width="310" />
         <icon height="360" platform="windows" src="www/res/icon/windows/Wide310x150Logo.scale-240.png" width="744" />
-        <splash height="1920" platform="windows" src="www/res/screen/windows/SplashScreenPhone.scale-240.png" width="1152" />
+        <splash height="1920" platform="windows" src="www/res/screen/windows/SplashScreenPhone.scale-240.png" width="1152" /> -->
     </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />

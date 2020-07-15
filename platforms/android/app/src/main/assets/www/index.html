@@ -11,6 +11,7 @@
   <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
   <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <!-- <link href="css/quill.snow.css" rel="stylesheet"> -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
 
   <script nomodule src="./js/jquery-3.4.1.js"></script>
@@ -36,6 +37,9 @@
     import { loadingController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
     window.loadingController = loadingController;
 
+    import { popoverController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.popoverController = popoverController;
+
   </script>
 </head>
 
@@ -43,7 +47,7 @@
   <ion-app>
     <ion-menu content-id="main-content">
       <ion-header>
-        <ion-toolbar color="secondary">
+        <ion-toolbar color="primary">
           <ion-title>Devid Lingampally</ion-title>
         </ion-toolbar>
       </ion-header>
@@ -72,7 +76,7 @@
 
     <ion-page class="ion-page" id="main-content">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="primary">
           <ion-buttons slot="start">
             <ion-menu-toggle>
               <ion-button>
@@ -81,10 +85,9 @@
             </ion-menu-toggle>
           </ion-buttons>
           <ion-buttons slot="end">
-            <ion-tab-button>
-              <ion-badge color="secondary" slot="top">20</ion-badge>
-              <ion-icon name="notifications-outline"></ion-icon>
-            </ion-tab-button>
+            <ion-button>
+              <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+            </ion-button>
           </ion-buttons>
           <ion-title>Bounce Back</ion-title>
         </ion-toolbar>
@@ -223,13 +226,13 @@
               <h1>My Stories</h1>
              
               <ion-fab horizontal="end" vertical="center" slot="fixed">
-                <ion-fab-button>
+                <ion-fab-button onclick="AddStory()">
                   <ion-icon name="add"></ion-icon>
                 </ion-fab-button>
-                <ion-fab-list side="start">
+                <!-- <ion-fab-list side="start">
                   <ion-button onclick="alert('Real Life')" color="tertiary">Real Life</ion-button>
                   <ion-button onclick="alert('Fictional')"  color="secondary">Fictional</ion-button>
-                </ion-fab-list>
+                </ion-fab-list> -->
               </ion-fab>
             
               <div div-type="card" onclick="createModalWithHeader('My Story 1')">
@@ -294,7 +297,7 @@
               <ion-label>Live Stories</ion-label>
               <ion-icon name="globe-outline"></ion-icon>
             </ion-tab-button>
-            <ion-tab-button tab="my-stories" onclick="handleButtonClick()">
+            <ion-tab-button tab="my-stories">
               <ion-label>My Stories</ion-label>
               <ion-icon name="newspaper-outline"></ion-icon>
             </ion-tab-button>
@@ -317,6 +320,7 @@
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/bb-ionic.js"></script>
   <script type="text/javascript" src="js/modals/show-story.js"></script>
+  <script type="text/javascript" src="js/modals/add-story.js"></script>
   <script type="text/javascript" src="js/ionic-events.js"></script>
   <script type="text/javascript">
     app.initialize();

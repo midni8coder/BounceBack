@@ -4,12 +4,12 @@ customElements.define('modal-content', class ModalContent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <ion-header translucent>
-          <ion-toolbar>
+          <ion-toolbar color="primary">
             <ion-title>Live Story 1</ion-title>
             <ion-buttons slot="end">
-                <ion-tab-button>
-                <ion-icon name="close-outline"  onclick="dismissModal()" ></ion-icon>
-                </ion-tab-button>
+              <ion-button  onclick="dismissModal()">
+                <ion-icon slot="icon-only" name="close-outline" ></ion-icon>
+              </ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
@@ -49,12 +49,12 @@ function prepareContent(header) {
     connectedCallback() {
       this.innerHTML = `
           <ion-header translucent>
-            <ion-toolbar>
+            <ion-toolbar color="primary">
               <ion-title>`+ header + `</ion-title>
               <ion-buttons slot="end">
-                  <ion-tab-button>
-                  <ion-icon name="close-outline"  onclick="dismissModal()" ></ion-icon>
-                  </ion-tab-button>
+                <ion-button onclick="dismissModal()">
+                  <ion-icon slot="icon-only" name="close-outline" ></ion-icon>
+                </ion-button>
               </ion-buttons>
             </ion-toolbar>
           </ion-header>
