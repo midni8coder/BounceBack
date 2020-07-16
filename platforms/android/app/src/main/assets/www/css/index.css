@@ -3,3 +3,6 @@ ion-textarea{
     height: auto;
     overflow: scroll;
 }
+.chip-white{
+    background-color: white !important;
+}

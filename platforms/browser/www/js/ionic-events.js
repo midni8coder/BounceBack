@@ -21,3 +21,17 @@ refresher2.addEventListener('ionRefresh', () => {
     refresher2.complete();
   }, 2000);
 });
+
+function likePost(control) {
+  debugger;
+  var colorValue = control.getAttribute("color") == "danger" ? "" : "danger";
+  control.setAttribute("color", colorValue);
+  var count = parseInt(control.childNodes[3].innerText);
+  var count = colorValue === "danger" ?  count+ 1 : count - 1;
+  control.childNodes[3].innerText = count;
+}
+function savePost(control) {
+  var colorValue = control.getAttribute("color") == "primary" ? "" : "primary";
+  control.setAttribute("color", colorValue);
+  control.childNodes[3].innerText = control.childNodes[3].innerText === "Save" ? "Saved" : "Save";
+}

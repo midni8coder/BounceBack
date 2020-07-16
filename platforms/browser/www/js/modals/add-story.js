@@ -59,8 +59,8 @@ function prepareAddStoryContent(storyType="General") {
               </ion-item>
               <ion-item>
                 <ion-label>Category</ion-label>
-                <ion-select id="modal-add-story-category" value="Covid19">
-                  <ion-select-option value="Covid19">Covid 19</ion-select-option>
+                <ion-select id="modal-add-story-category" value="COVID19">
+                  <ion-select-option value="COVID19">COVID-19</ion-select-option>
                   <ion-select-option value="Health">Health</ion-select-option>
                   <ion-select-option value="Relationship">Relationship</ion-select-option>
                   <ion-select-option value="Education">Education</ion-select-option>
@@ -70,15 +70,15 @@ function prepareAddStoryContent(storyType="General") {
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Title <ion-text color="danger">*</ion-text></ion-label>
-                <ion-input name="storyTitle" id="storyTitle" required type="text" maxlength="100"></ion-input>
+                <ion-input clear-input name="storyTitle" id="storyTitle" required type="text" maxlength="100"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position="stacked">Notes <ion-text color="danger">*</ion-text></ion-label>
+                <ion-label position="stacked">Description <ion-text color="danger">*</ion-text></ion-label>
                 <ion-textarea name="storyDescription" id="storyDescription"></ion-textarea>
               </ion-item>
               <ion-item>
                 <ion-label position="stacked">Labels <ion-text color="danger">*</ion-text></ion-label>
-                <ion-input name="storyLabels" id="storyLabels" placeholder="Ex: Motivational, Thoughtful" required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+                <ion-input clear-input name="storyLabels" id="storyLabels" placeholder="Ex: Motivational, Thoughtful" required type="text" oninput="handleFirstNameValue(event)"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-checkbox color="primary" checked disabled slot="start"></ion-checkbox>

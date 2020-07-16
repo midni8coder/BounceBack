@@ -17,7 +17,7 @@
   <script nomodule src="./js/jquery-3.4.1.js"></script>
   <script nomodule src="./Ionic/ionic.js"></script>
   <link rel="stylesheet" href="./Ionic/ionic.bundle.css" />
-  <title>Hello World</title>
+  <title>Bounce Back</title>
   <style>
     /* :root {
         --ion-safe-area-top: 20px;
@@ -93,23 +93,62 @@
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <h1>Main Content</h1>
-        <p>Click the icon in the top left to toggle the menu.</p>
         <ion-tabs>
 
           <ion-tab tab="live-stories">
+            <ion-header translucent>
+              <ion-toolbar>
+                <ion-title>Live Stories</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button id="filter-live-stories" color="primary" caption="Filter Results">
+                    <ion-icon slot="icon-only" name="funnel-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+              <ion-toolbar>
+                <ion-segment value="All" scrollable>
+                  <ion-segment-button value="All">
+                    <ion-label>All</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="COVID19">
+                    <ion-label>COVID-19</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Health">
+                    <ion-label>Health</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Relation">
+                    <ion-label>Relation</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Education">
+                    <ion-label>Education</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Business">
+                    <ion-label>Business</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Job">
+                    <ion-label>Job</ion-label>
+                  </ion-segment-button>
+                </ion-segment>
+              </ion-toolbar>
+            </ion-header>
             <ion-content fullscreen class="ion-padding">
               <ion-refresher slot="fixed" id="refresher-live-stories">
                 <ion-refresher-content></ion-refresher-content>
               </ion-refresher>
-              <h1>Live Stories</h1>
-              <div div-type="card" onclick="createModal()">
+              <!-- <h1>Live Stories</h1> -->
+              <div div-type="card">
                 <ion-card>
                   <ion-card-header>
-                    <ion-card-title>Live Story 1
-                      <ion-chip color="primary">
-                        <ion-icon name="eye-outline" color="primary"></ion-icon>
+                    <ion-card-title>
+                      <u onclick="createModal()">Live Story 1</u>
+                      <ion-chip outline onclick="showToast('Views: 543')">
+                        <ion-icon name="eye-outline" ></ion-icon>
                         <IonBadge>543</IonBadge>
+                      </ion-chip>
+                      <ion-chip outline onclick="savePost(this)">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-label data-type="label">Save</ion-label>
+                        <!-- <IonBadge>10</IonBadge> -->
                       </ion-chip>
                     </ion-card-title>
                     <ion-card-subtitle>
@@ -117,37 +156,43 @@
                     </ion-card-subtitle>
                   </ion-card-header>
                   <ion-card-content>
-                    <p>
+                    <p onclick="createModal()">
                       Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital
                       of
                       the Wisconsin Territory in 1836.
                     </p>
                     <hr>
                     <p>
-                      <ion-chip color="danger">
-                        <ion-icon name="heart-outline" color="danger"></ion-icon>
+                      <ion-chip outline onclick="likePost(this)">
+                        <ion-icon name="heart-outline"></ion-icon>
                         <IonBadge>432</IonBadge>
                       </ion-chip>
-                      <ion-chip color="secondary">
-                        <ion-icon name="chatbubble-ellipses-outline" color="secondary"></ion-icon>
+                      <ion-chip outline >
+                        <ion-icon  name="chatbubble-ellipses-outline" ></ion-icon>
                         <IonBadge>143</IonBadge>
                       </ion-chip>
-                      <ion-chip color="tertiary">
-                        <ion-icon name="share-social-outline" color="tertiary"></ion-icon>
+                      <ion-chip outline >
+                        <ion-icon  name="share-social-outline"></ion-icon>
                         <IonBadge>243</IonBadge>
                       </ion-chip>
                     </p>
                   </ion-card-content>
                 </ion-card>
               </div>
-              <div div-type="card" onclick="createModal()">
+              <div div-type="card">
                 <ion-card>
                   <img src="Content/img/Covid19.jpg" />
                   <ion-card-header>
-                    <ion-card-title>Live Story 1
-                      <ion-chip color="primary">
-                        <ion-icon name="eye-outline" color="primary"></ion-icon>
+                    <ion-card-title>
+                      <u onclick="createModal()">Live Story 1</u>
+                      <ion-chip onclick="showToast('Views: 543')">
+                        <ion-icon name="eye-outline" ></ion-icon>
                         <IonBadge>543</IonBadge>
+                      </ion-chip>
+                      <ion-chip onclick="savePost(this)">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-label data-type="label">Save</ion-label>
+                        <!-- <IonBadge>10</IonBadge> -->
                       </ion-chip>
                     </ion-card-title>
                     <ion-card-subtitle>
@@ -155,36 +200,42 @@
                     </ion-card-subtitle>
                   </ion-card-header>
                   <ion-card-content>
-                    <p>
+                    <p onclick="createModal()">
                       Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital
                       of
                       the Wisconsin Territory in 1836.
                     </p>
                     <hr>
                     <p>
-                      <ion-chip color="danger">
-                        <ion-icon name="heart-outline" color="danger"></ion-icon>
+                      <ion-chip  onclick="likePost(this)">
+                        <ion-icon name="heart-outline"></ion-icon>
                         <IonBadge>432</IonBadge>
                       </ion-chip>
-                      <ion-chip color="secondary">
-                        <ion-icon name="chatbubble-ellipses-outline" color="secondary"></ion-icon>
+                      <ion-chip  >
+                        <ion-icon  name="chatbubble-ellipses-outline" ></ion-icon>
                         <IonBadge>143</IonBadge>
                       </ion-chip>
-                      <ion-chip color="tertiary">
-                        <ion-icon name="share-social-outline" color="tertiary"></ion-icon>
+                      <ion-chip  >
+                        <ion-icon  name="share-social-outline"></ion-icon>
                         <IonBadge>243</IonBadge>
                       </ion-chip>
                     </p>
                   </ion-card-content>
                 </ion-card>
               </div>
-              <div div-type="card" onclick="createModal()">
+              <div div-type="card">
                 <ion-card>
                   <ion-card-header>
-                    <ion-card-title>Live Story 1
-                      <ion-chip color="primary">
-                        <ion-icon name="eye-outline" color="primary"></ion-icon>
+                    <ion-card-title>
+                      <u onclick="createModal()">Live Story 1</u>
+                      <ion-chip style="background-color: white"  onclick="showToast('Views: 543')">
+                        <ion-icon name="eye-outline" ></ion-icon>
                         <IonBadge>543</IonBadge>
+                      </ion-chip>
+                      <ion-chip onclick="savePost(this)" style="background-color: white">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-label data-type="label">Save</ion-label>
+                        <!-- <IonBadge>10</IonBadge> -->
                       </ion-chip>
                     </ion-card-title>
                     <ion-card-subtitle>
@@ -192,7 +243,50 @@
                     </ion-card-subtitle>
                   </ion-card-header>
                   <ion-card-content>
+                    <p onclick="createModal()">
+                      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital
+                      of
+                      the Wisconsin Territory in 1836.
+                    </p>
+                    <hr>
                     <p>
+                      <ion-chip style="background-color: white"onclick="likePost(this)">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <IonBadge>432</IonBadge>
+                      </ion-chip>
+                      <ion-chip style="background-color: white" >
+                        <ion-icon  name="chatbubble-ellipses-outline" ></ion-icon>
+                        <IonBadge>143</IonBadge>
+                      </ion-chip>
+                      <ion-chip style="background-color: white" >
+                        <ion-icon  name="share-social-outline"></ion-icon>
+                        <IonBadge>243</IonBadge>
+                      </ion-chip>
+                    </p>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+              <div div-type="card">
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      <u onclick="createModal()">Live Story 1</u>
+                      <ion-chip color="primary">
+                        <ion-icon name="eye-outline" color="primary"></ion-icon>
+                        <IonBadge>543</IonBadge>
+                      </ion-chip>
+                      <ion-chip color="primary">
+                        <ion-icon name="bookmark-outline" color=""></ion-icon>
+                        <ion-label>Save</ion-label>
+                        <!-- <IonBadge>10</IonBadge> -->
+                      </ion-chip>
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      <ion-icon name="alarm-outline"></ion-icon>2020/07/15 07:35 PM
+                    </ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <p onclick="createModal()">
                       Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital
                       of
                       the Wisconsin Territory in 1836.
@@ -219,12 +313,38 @@
           </ion-tab>
 
           <ion-tab tab="my-stories">
+            <ion-header translucent>
+              <ion-toolbar>
+                <ion-title>My Stories</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button id="filter-my-stories" color="primary" caption="Filter Results">
+                    <ion-icon slot="icon-only" name="funnel-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+              <ion-toolbar>
+                <ion-segment value="Published">
+                  <ion-segment-button value="Published">
+                    <ion-label>Published</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Draft">
+                    <ion-label>Draft</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Liked">
+                    <ion-label>Liked</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button value="Saved">
+                    <ion-label>Saved</ion-label>
+                  </ion-segment-button>
+                </ion-segment>
+              </ion-toolbar>
+            </ion-header>
             <ion-content fullscreen class="ion-padding">
               <ion-refresher slot="fixed" id="refresher-my-stories">
                 <ion-refresher-content></ion-refresher-content>
               </ion-refresher>
-              <h1>My Stories</h1>
-             
+              <!-- <h1>My Stories</h1> -->
+
               <ion-fab horizontal="end" vertical="center" slot="fixed">
                 <ion-fab-button onclick="AddStory()">
                   <ion-icon name="add"></ion-icon>
@@ -234,14 +354,20 @@
                   <ion-button onclick="alert('Fictional')"  color="secondary">Fictional</ion-button>
                 </ion-fab-list> -->
               </ion-fab>
-            
-              <div div-type="card" onclick="createModalWithHeader('My Story 1')">
+
+              <div div-type="card">
                 <ion-card>
                   <ion-card-header>
-                    <ion-card-title>My Story 1
-                      <ion-chip color="primary">
-                        <ion-icon name="eye-outline" color="primary"></ion-icon>
+                    <ion-card-title>
+                      <u onclick="createModal()">My Story 1</u>
+                      <ion-chip style="background-color: white"  onclick="showToast('Views: 543')">
+                        <ion-icon name="eye-outline" ></ion-icon>
                         <IonBadge>543</IonBadge>
+                      </ion-chip>
+                      <ion-chip onclick="savePost(this)" style="background-color: white">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-label data-type="label">Save</ion-label>
+                        <!-- <IonBadge>10</IonBadge> -->
                       </ion-chip>
                     </ion-card-title>
                     <ion-card-subtitle>
@@ -249,23 +375,23 @@
                     </ion-card-subtitle>
                   </ion-card-header>
                   <ion-card-content>
-                    <p>
+                    <p onclick="createModal()">
                       Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital
                       of
                       the Wisconsin Territory in 1836.
                     </p>
                     <hr>
                     <p>
-                      <ion-chip color="danger">
-                        <ion-icon name="heart-outline" color="danger"></ion-icon>
+                      <ion-chip style="background-color: white"onclick="likePost(this)">
+                        <ion-icon name="heart-outline"></ion-icon>
                         <IonBadge>432</IonBadge>
                       </ion-chip>
-                      <ion-chip color="secondary">
-                        <ion-icon name="chatbubble-ellipses-outline" color="secondary"></ion-icon>
+                      <ion-chip style="background-color: white" >
+                        <ion-icon  name="chatbubble-ellipses-outline" ></ion-icon>
                         <IonBadge>143</IonBadge>
                       </ion-chip>
-                      <ion-chip color="tertiary">
-                        <ion-icon name="share-social-outline" color="tertiary"></ion-icon>
+                      <ion-chip style="background-color: white" >
+                        <ion-icon  name="share-social-outline"></ion-icon>
                         <IonBadge>243</IonBadge>
                       </ion-chip>
                     </p>
@@ -276,11 +402,16 @@
           </ion-tab>
 
           <ion-tab tab="account">
+            <ion-header translucent>
+              <ion-toolbar>
+                <ion-title>Account Details</ion-title>
+              </ion-toolbar>
+            </ion-header>
             <ion-content fullscreen class="ion-padding">
               <ion-refresher slot="fixed" id="refresher-account">
                 <ion-refresher-content></ion-refresher-content>
               </ion-refresher>
-              <h1>Account Details</h1>
+              <!-- <h1>Account Details</h1> -->
             </ion-content>
           </ion-tab>
           <ion-tab tab="messagebox">
@@ -324,7 +455,6 @@
   <script type="text/javascript" src="js/ionic-events.js"></script>
   <script type="text/javascript">
     app.initialize();
-    
   </script>
 </body>
 

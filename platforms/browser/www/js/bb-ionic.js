@@ -33,3 +33,36 @@ async function handleButtonClick() {
     await loading.present();
 }
 
+const segments = document.querySelectorAll('ion-segment')
+for (let i = 0; i < segments.length; i++) {
+    segments[i].addEventListener('ionChange', (ev) => {
+        alert('Segment changed to ' + ev.detail.value);
+    })
+}
+
+async function showToast(message, color = "dark") {
+    const toast = await toastController.create({
+        color: color,
+        duration: 2000,
+        message: message,
+        showCloseButton: true
+        // ,buttons: [
+        //     {
+        //         side: 'start',
+        //         icon: 'star',
+        //         text: 'Favorite',
+        //         handler: () => {
+        //             alert('Favorite clicked');
+        //         }
+        //     }, {
+        //         text: 'Done',
+        //         role: 'cancel',
+        //         handler: () => {
+        //             alert('Cancel clicked');
+        //         }
+        //     }
+        // ]
+    });
+
+    await toast.present();
+}

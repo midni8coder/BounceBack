@@ -2,10 +2,12 @@
 <widget id="org.bounceback.sample" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>BounceBack</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A platform to show up success and failure stories of your life. 
+        When you don't have friends to share your failure/depression, this is a platform where you can share and get motivated/inspired by people like you. 
+        You can also share Fictional stories that provoke a thought to be better in life
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="devidlingampally@gmail.com" href="https://midni8coder.github.io/">
+        Devid Lingampally(devidlingampally@gmail.com) and Sagar Rodda(sksagar.r@gmail.com)
     </author>
     <content src="index.html" />
     <access origin="*" />

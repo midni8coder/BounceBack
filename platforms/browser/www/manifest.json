@@ -4,8 +4,8 @@
   "name": "BounceBack",
   "short_name": "BounceBack",
   "version": "org.bounceback.sample",
-  "description": "Hello World sample application that responds to the deviceready event.",
-  "author": "PhoneGap Team",
+  "description": "A platform to show up success and failure stories of your life. \n        When you don't have friends to share your failure/depression, this is a platform where you can share and get motivated/inspired by people like you. \n        You can also share Fictional stories that provoke a thought to be better in life",
+  "author": "Devid Lingampally(devidlingampally@gmail.com) and Sagar Rodda(sksagar.r@gmail.com)",
   "icons": [],
   "start_url": "index.html"
 }

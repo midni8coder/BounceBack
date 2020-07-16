@@ -41,10 +41,12 @@
     </feature>
     <name>BounceBack</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A platform to show up success and failure stories of your life. 
+        When you don't have friends to share your failure/depression, this is a platform where you can share and get motivated/inspired by people like you. 
+        You can also share Fictional stories that provoke a thought to be better in life
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="devidlingampally@gmail.com" href="https://midni8coder.github.io/">
+        Devid Lingampally(devidlingampally@gmail.com) and Sagar Rodda(sksagar.r@gmail.com)
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -52,24 +54,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
-    <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
-    <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
-    <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
-    <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
-    <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
-    <splash density="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
-    <splash density="land-mdpi" src="www/res/screen/android/drawable-land-mdpi-screen.png" />
-    <splash density="land-hdpi" src="www/res/screen/android/drawable-land-hdpi-screen.png" />
-    <splash density="land-xhdpi" src="www/res/screen/android/drawable-land-xhdpi-screen.png" />
-    <splash density="land-xxhdpi" src="www/res/screen/android/drawable-land-xxhdpi-screen.png" />
-    <splash density="land-xxxhdpi" src="www/res/screen/android/drawable-land-xxxhdpi-screen.png" />
-    <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
-    <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
-    <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
-    <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
-    <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
-    <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+    <icon src="www/res/icon/bb/B.png" />
     <allow-intent href="market:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
