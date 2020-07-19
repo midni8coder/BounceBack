@@ -21,9 +21,15 @@ refresher2.addEventListener('ionRefresh', () => {
     refresher2.complete();
   }, 2000);
 });
+const refresher3 = document.getElementById('refresher-messagebox');
+refresher3.addEventListener('ionRefresh', () => {
+  setTimeout(() => {
+    alert("refresher-messagebox");
+    refresher3.complete();
+  }, 2000);
+});
 
 function likePost(control) {
-  debugger;
   var colorValue = control.getAttribute("color") == "danger" ? "" : "danger";
   control.setAttribute("color", colorValue);
   var count = parseInt(control.childNodes[3].innerText);

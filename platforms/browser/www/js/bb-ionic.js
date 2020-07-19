@@ -24,13 +24,14 @@ function dismissModal() {
     }
 }
 
-async function handleButtonClick() {
+async function handleButtonClick(message) {
     const loading = await loadingController.create({
-        message: 'Loading...',
-        duration: 3000
+        message: message ? message : 'Loading...'
+         ,duration: 3000
     });
 
     await loading.present();
+    app.globalLoader = loading;
 }
 
 const segments = document.querySelectorAll('ion-segment')
@@ -66,3 +67,22 @@ async function showToast(message, color = "dark") {
 
     await toast.present();
 }
+
+let length = 0;
+const list = document.getElementById('list');
+const infiniteScroll = document.getElementById('scroll-live-stories');
+
+infiniteScroll.addEventListener('ionInfinite', async function () {
+    //   alert('load more...');
+    if (true) {//length < users.length
+        // handleButtonClick('Loading More Stories...');
+        //await wait(500);
+
+        app.appendItems(10);
+        infiniteScroll.complete();
+        console.log('Done');
+    } else {
+        console.log('No More Data');
+        infiniteScroll.disabled = true;
+    }
+});
