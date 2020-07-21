@@ -41,7 +41,7 @@ for (let i = 0; i < segments.length; i++) {
     })
 }
 
-async function showToast(message, color = "dark") {
+async function showToast(message, color = "primary") {
     const toast = await toastController.create({
         color: color,
         duration: 2000,

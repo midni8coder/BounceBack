@@ -6,3 +6,6 @@ ion-textarea{
 .chip-white{
     background-color: white !important;
 }
+.chat-box h3{
+    font-weight: bold  !important;
+}
