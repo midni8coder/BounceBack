@@ -3,11 +3,11 @@ let currentPopover = null;
 function AddStory(storyType) {
   try {
     if (!customElements.get('modal-add-story'))
-          prepareAddStoryContent(storyType);
+      prepareAddStoryContent(storyType);
     if (!customElements.get('popover-add-story'))
-          prepareAddStoryPopOver();
-          
-    createModal('modal-add-story').then(function(){
+      prepareAddStoryPopOver();
+
+    createModal('modal-add-story').then(function () {
       const optionsButton = document.getElementById('add-story-options');
       optionsButton.addEventListener('click', onAddStoryOptionsClick);
     });
@@ -16,15 +16,31 @@ function AddStory(storyType) {
     console.error(ex.message);
   }
 }
-function AddStory_Submit(event){
-  try{
+function AddStory_Submit(event) {
+  try {
+  }
+  catch (ex) {
+    console.error(ex.message);
+  }
+}
+function openDescriptionScreen() {
+  try {
+    if (!customElements.get('modal-add-story'))
+      prepareAddStoryContent(storyType);
+    if (!customElements.get('popover-add-story'))
+      prepareAddStoryPopOver();
+
+    createModal('modal-add-story').then(function () {
+      const optionsButton = document.getElementById('add-story-options');
+      optionsButton.addEventListener('click', onAddStoryOptionsClick);
+    });
   }
   catch (ex) {
     console.error(ex.message);
   }
 }
 
-function prepareAddStoryContent(storyType="General") {
+function prepareAddStoryContent(storyType = "General") {
   customElements.define('modal-add-story', class ModalContent extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
@@ -72,9 +88,9 @@ function prepareAddStoryContent(storyType="General") {
                 <ion-label position="floating">Title <ion-text color="danger">*</ion-text></ion-label>
                 <ion-input clear-input name="storyTitle" id="storyTitle" required type="text" maxlength="100"></ion-input>
               </ion-item>
-              <ion-item>
+              <ion-item onclick='openDescriptionScreen()'>
                 <ion-label position="stacked">Description <ion-text color="danger">*</ion-text></ion-label>
-                <ion-textarea name="storyDescription" id="storyDescription"></ion-textarea>
+                <ion-textarea readonly name="storyDescription" id="storyDescription"></ion-textarea>
               </ion-item>
               <ion-item>
                 <ion-label position="stacked">Labels <ion-text color="danger">*</ion-text></ion-label>
@@ -93,7 +109,7 @@ function prepareAddStoryContent(storyType="General") {
           </form>
           <script type="text/javascript">
             $(document).ready(function(){
-              $('#modal-add-story-type').value="`+storyType+`";
+              $('#modal-add-story-type').value="`+ storyType + `";
               alert($('#modal-add-story-type').value);
             });
           </script>
@@ -103,8 +119,8 @@ function prepareAddStoryContent(storyType="General") {
   });
 }
 
-function prepareAddStoryPopOver(){
-  try{
+function prepareAddStoryPopOver() {
+  try {
     customElements.define('popover-add-story', class ModalContent extends HTMLElement {
       connectedCallback() {
         this.innerHTML = `
